@@ -17,6 +17,14 @@ namespace Fisher.Bookstore.Controllers
           booksRepository = repository;
       }
 
+
+       [HttpGet]
+        public IActionResult GetAll()
+        {
+            return Ok(booksRepository.GetBooks()); 
+        }
+
+
       [HttpGet("{bookId}")]
       public IActionResult Get(int bookId)
       {

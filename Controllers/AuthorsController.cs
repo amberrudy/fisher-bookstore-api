@@ -17,6 +17,14 @@ namespace Fisher.Bookstore.Controllers
           authorsRepository = repository;
       }
 
+
+      [HttpGet]
+        public IActionResult GetAll()
+        {
+            return Ok(authorsRepository.GetAuthors()); 
+        }
+
+
       [HttpGet("{authorId}")]
       public IActionResult Get(int authorId)
       {
